@@ -33,3 +33,15 @@ def test_with_default_means_kw_argument_arg_given():
 def test_with_default_means_kw_argument_no_arg_given():
     args = SampleParserStrAttWithDefaultValue.getargs([])
     assert args.name is None
+
+
+@attr.s(auto_attribs=True)
+class SampleParserIntAttWithoutDefaultValue(AttrsArgparser):
+    age: int
+
+
+def test_with_int_inputtet_as_str():
+    args = SampleParserIntAttWithoutDefaultValue.getargs(
+        ["7"]
+    )  # input from command line take as str
+    assert args.age == 7
