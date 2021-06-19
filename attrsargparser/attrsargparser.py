@@ -20,10 +20,12 @@ class AttrsArgparser:
         arg_name = attibute_arument.name.replace("_", "-")
         arg_type = attibute_arument.type
         default = attibute_arument.default
+        help_str = attibute_arument.metadata.get("help", "")
 
         kwargs = {
             "type": arg_type,
             "default": default,
+            "help": help_str,
         }
 
         if default != attr.NOTHING:  # handle as optional / non-positional

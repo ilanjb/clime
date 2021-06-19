@@ -77,3 +77,15 @@ class SampleParserBoolAttWithoutDefaultValue(AttrsArgparser):
 def test_bool_must_have_default():
     with pytest.raises(BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults):
         SampleParserBoolAttWithoutDefaultValue.getargs()
+
+
+@attr.s(auto_attribs=True)
+class SampleParserWithHelp(AttrsArgparser):
+    name: str = attr.ib(metadata={"help": "help me!"})
+
+
+def test_help_works(capsys):
+    with pytest.raises(SystemExit):
+        SampleParserWithHelp.getargs(["--help"])
+    captured = capsys.readouterr()
+    assert "help me!" in captured.out
