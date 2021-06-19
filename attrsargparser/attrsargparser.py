@@ -2,6 +2,10 @@ from argparse import ArgumentParser
 
 import attr
 
+from attrsargparser.attrsarparser_exceptions import (
+    BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
+)
+
 
 @attr.s(auto_attribs=True)
 class AttrsArgparser:
@@ -12,20 +16,32 @@ class AttrsArgparser:
         """
         Parses information from that Attribute to add an argument to the parser
         """
-        arg_name = attibute_arument.name
+        arg_name = attibute_arument.name.replace("_", "-")
         arg_type = attibute_arument.type
         default = attibute_arument.default
-        if default == attr.NOTHING:  # required, positional
-            parser.add_argument(
-                f"{arg_name}",
-                type=arg_type,
-            )
+
+        if arg_type == bool:
+            if default is False:
+                action = "store_true"
+            elif default is True:
+                action = "store_false"
+            else:
+                msg = f"{attibute_arument.name} has no default value"
+                raise BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(msg)
+            parser.add_argument(f"--{arg_name}", action=action)
+
         else:
-            parser.add_argument(
-                f"--{arg_name}",
-                type=arg_type,
-                default=default,
-            )
+            if default == attr.NOTHING:  # required, positional
+                parser.add_argument(
+                    f"{arg_name}",
+                    type=arg_type,
+                )
+            else:
+                parser.add_argument(
+                    f"--{arg_name}",
+                    type=arg_type,
+                    default=default,
+                )
 
     @classmethod
     def _build_argument_parser(cls) -> ArgumentParser:
