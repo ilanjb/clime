@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from typing import Any
 
 import attr
 
@@ -20,6 +21,14 @@ class AttrsArgparser:
         arg_type = attibute_arument.type
         default = attibute_arument.default
 
+        kwargs = {
+            "type": arg_type,
+            "default": default,
+        }
+
+        if default != attr.NOTHING:  # handle as optional / non-positional
+            arg_name = f"--{arg_name}"
+
         if arg_type == bool:
             if default is False:
                 action = "store_true"
@@ -28,20 +37,11 @@ class AttrsArgparser:
             else:
                 msg = f"{attibute_arument.name} has no default value"
                 raise BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(msg)
-            parser.add_argument(f"--{arg_name}", action=action)
+            kwargs["action"] = action
+            kwargs.pop("type")
+            kwargs.pop("default")
 
-        else:
-            if default == attr.NOTHING:  # required, positional
-                parser.add_argument(
-                    f"{arg_name}",
-                    type=arg_type,
-                )
-            else:
-                parser.add_argument(
-                    f"--{arg_name}",
-                    type=arg_type,
-                    default=default,
-                )
+        parser.add_argument(arg_name, **kwargs)
 
     @classmethod
     def _build_argument_parser(cls) -> ArgumentParser:
