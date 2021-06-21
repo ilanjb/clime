@@ -96,7 +96,7 @@ class AttrsArgparser:
         Creates the parser. then adds the arguments.
         :return:
         """
-        parser = ArgumentParser()
+        parser = ArgumentParser(usage=cls.__doc__)
         for field in cls.__attrs_attrs__:
             cls._add_argument_to_parser(parser, field)
         return parser

@@ -29,3 +29,17 @@ def test_non_init_fields_not_in_parser(capsys):
         SampleParserStrAttNoDefaultValue.getargs(["joe", "123"])
     captured = capsys.readouterr()
     assert "unrecognized arguments: 123" in captured.err
+
+
+@attr.s(auto_attribs=True)
+class SampleParserWithDocstings(AttrsArgparser):
+    """Hi. This is great"""
+
+    name: str
+
+
+def test_docsrings_are_used_for_usage(capsys):
+    with pytest.raises(SystemExit):
+        SampleParserWithDocstings.getargs(["--help"])
+    captured = capsys.readouterr()
+    assert "usage: Hi. This is great" in captured.out
