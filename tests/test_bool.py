@@ -2,7 +2,9 @@ import attr
 import pytest
 
 from attrsargparser.attrsargparser import AttrsArgparser
-from attrsargparser.attrsarparser_exceptions import BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults
+from attrsargparser.attrsarparser_exceptions import (
+    BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
+)
 
 
 @attr.s(auto_attribs=True)

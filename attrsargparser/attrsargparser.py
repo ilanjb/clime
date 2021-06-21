@@ -1,6 +1,5 @@
 from argparse import ArgumentParser
 from enum import Enum
-from typing import Any
 
 import attr
 
@@ -9,7 +8,6 @@ from attrsargparser.attrsarparser_exceptions import (
 )
 
 
-# @attr.s(auto_attribs=True)
 class AttrsArgparser:
     @staticmethod
     def _add_argument_to_parser(

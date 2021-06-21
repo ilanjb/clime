@@ -10,7 +10,7 @@ class Colors(Enum):
     green = auto()
 
 
-@attr.s(auto_attribs=True, frozen=False, eq=False)
+@attr.s(auto_attribs=True)
 class SampleParserWithEnum(AttrsArgparser):
     color: Colors = attr.ib(
         converter=Colors.__getattr__
