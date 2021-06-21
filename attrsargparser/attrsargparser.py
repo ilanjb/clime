@@ -46,6 +46,7 @@ def attrs_argparser_field_transformers(cls, fields):
         results.append(field.evolve(converter=converter))
     return results
 
+
 class AttrsArgparser:
     @staticmethod
     def _add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> None:
@@ -96,8 +97,8 @@ class AttrsArgparser:
         :return:
         """
         parser = ArgumentParser()
-        for attibute_arument in cls.__attrs_attrs__:
-            cls._add_argument_to_parser(parser, attibute_arument)
+        for field in cls.__attrs_attrs__:
+            cls._add_argument_to_parser(parser, field)
         return parser
 
     @classmethod
