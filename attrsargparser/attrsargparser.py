@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 from enum import Enum
+from typing import Any
 
 import attr
 
@@ -8,18 +9,53 @@ from attrsargparser.attrsarparser_exceptions import (
 )
 
 
+def field_type_is_enum(field_type: Any):
+    """
+    :param field_type: taken from attr.Attribute.type
+
+    :return:
+    """
+    try:
+        is_enum = issubclass(field_type, Enum)
+    except TypeError:
+        is_enum = False
+
+    return is_enum
+
+
+def attrs_argparser_field_transformers(cls, fields):
+    """
+    adapted from https://www.attrs.org/en/stable/extending.html#automatic-field-transformation-and-modification
+    sets default convererters
+
+    :param cls:
+    :param fields:
+    :return:
+    """
+    results = []
+    for field in fields:
+        if field.converter is not None:
+            results.append(field)
+            continue
+
+        if field_type_is_enum(field.type):
+            converter = field.type.__getattr__
+
+        else:
+            converter = None
+        results.append(field.evolve(converter=converter))
+    return results
+
 class AttrsArgparser:
     @staticmethod
-    def _add_argument_to_parser(
-        parser: ArgumentParser, attibute_arument: attr.Attribute
-    ) -> None:
+    def _add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> None:
         """
         Parses information from that Attribute to add an argument to the parser
         """
-        arg_name = attibute_arument.name.replace("_", "-")  # this is not working well
-        arg_type = attibute_arument.type
-        default = attibute_arument.default
-        help_str = attibute_arument.metadata.get("help", "")
+        arg_name = field.name.replace("_", "-")  # this is not working well
+        arg_type = field.type
+        default = field.default
+        help_str = field.metadata.get("help", "")
 
         kwargs = {
             "type": arg_type,
@@ -30,10 +66,7 @@ class AttrsArgparser:
         if default != attr.NOTHING:  # handle as optional / non-positional
             arg_name = f"--{arg_name}"
 
-        try:
-            treat_as_enum = issubclass(arg_type, Enum)
-        except TypeError:
-            treat_as_enum = False
+        treat_as_enum = field_type_is_enum(arg_type)
 
         if treat_as_enum:
             choices = arg_type._member_names_
@@ -48,7 +81,7 @@ class AttrsArgparser:
             elif default is True:
                 action = "store_false"
             else:
-                msg = f"{attibute_arument.name} has no default value"
+                msg = f"{field.name} has no default value"
                 raise BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(msg)
             kwargs["action"] = action
             kwargs.pop("type")
