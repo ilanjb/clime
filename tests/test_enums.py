@@ -24,10 +24,10 @@ def test_enums_good_choice_explicit_converter():
 
 
 @attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserWithEnumWithattrs_argparser_field_transformers(AttrsArgparser):
+class SampleParserWithEnumWithFieldTransformer(AttrsArgparser):
     color: Colors
 
 
-def test_enums_good_choice_implicit_converter_from_attrs_argparser_field_transformers():
+def test_enums_get_enum_converter():
     args = SampleParserWithEnum.getargs(["green"])
     assert args.color == Colors.green

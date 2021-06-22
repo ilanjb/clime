@@ -10,3 +10,11 @@ class BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(
     CannotConvertAttrsAttributeToArgparseArgument
 ):
     pass
+
+
+class AttrsArgparserFieldTransformerExceptions(AttrsArgparserExceptions):
+    pass
+
+
+class CouldNotAssumeConverter(AttrsArgparserFieldTransformerExceptions):
+    pass

@@ -1,7 +1,10 @@
 import attr
 import pytest
 
-from attrsargparser.attrsargparser import AttrsArgparser
+from attrsargparser.attrsargparser import (
+    AttrsArgparser,
+    attrs_argparser_field_transformers,
+)
 from attrsargparser.attrsarparser_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
 )
@@ -34,3 +37,13 @@ class SampleParserBoolAttWithoutDefaultValue(AttrsArgparser):
 def test_bool_must_have_default():
     with pytest.raises(BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults):
         SampleParserBoolAttWithoutDefaultValue.getargs()
+
+
+@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
+class SampleParserBoolAttWithFieldTransformer(AttrsArgparser):
+    is_cool: bool = False
+
+
+def test_bool_gets_bool_converter():
+    args = SampleParserBoolAttWithFieldTransformer.getargs(args=["--is-cool"])
+    assert args.is_cool is True
