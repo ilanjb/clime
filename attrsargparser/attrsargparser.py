@@ -52,6 +52,8 @@ class AttrsArgparser:
     def _add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> None:
         """
         Parses information from that Attribute to add an argument to the parser
+        All types will be handled as strings except for booleans!
+        conversions should be done via attrs.ib(converter=)
         """
         arg_name = field.name.replace("_", "-")  # this is not working well
         arg_type = field.type
@@ -59,8 +61,6 @@ class AttrsArgparser:
         help_str = field.metadata.get("help", "")
 
         kwargs = {
-            "type": arg_type,
-            "default": default,
             "help": help_str,
         }
 
@@ -72,7 +72,6 @@ class AttrsArgparser:
         if treat_as_enum:
             choices = arg_type._member_names_
             kwargs["choices"] = choices
-            kwargs.pop("type")
             if default:
                 kwargs["default"] = default.name
 
@@ -85,8 +84,9 @@ class AttrsArgparser:
                 msg = f"{field.name} has no default value"
                 raise BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(msg)
             kwargs["action"] = action
-            kwargs.pop("type")
-            kwargs.pop("default")
+
+        else:
+            kwargs["default"] = default
 
         parser.add_argument(arg_name, **kwargs)
 

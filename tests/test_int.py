@@ -5,7 +5,7 @@ from attrsargparser.attrsargparser import AttrsArgparser
 
 @attr.s(auto_attribs=True)
 class SampleParserIntAttWithoutDefaultValue(AttrsArgparser):
-    age: int
+    age: int = attr.ib(converter=int)
 
 
 def test_with_int_inputtet_as_str():
