@@ -1,7 +1,7 @@
 import attr
 import pytest
 
-from parseonce.parseonce import OnceParser
+from parseonce.onceparser import OnceParser
 
 
 @attr.s(auto_attribs=True)

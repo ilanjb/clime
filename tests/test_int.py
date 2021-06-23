@@ -1,9 +1,7 @@
 import attr
 
-from parseonce.parseonce import (
-    OnceParser,
-    parseonce_field_transformer,
-)
+from parseonce.parseonce_field_transformer import parseonce_field_transformer
+from parseonce.onceparser import OnceParser
 
 
 @attr.s(auto_attribs=True)
