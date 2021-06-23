@@ -2,8 +2,8 @@ from enum import Enum, auto
 
 import attr
 
-from parseonce.parseonce_field_transformer import parseonce_field_transformer
-from parseonce.onceparser import OnceParser
+from parseonce import parseonce_field_transformer
+from parseonce import OnceParser
 
 
 class Colors(Enum):

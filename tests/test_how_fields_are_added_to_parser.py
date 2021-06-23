@@ -3,7 +3,7 @@ from random import random
 import attr
 import pytest
 
-from parseonce.onceparser import OnceParser
+from parseonce import OnceParser
 
 
 @attr.s(auto_attribs=True)

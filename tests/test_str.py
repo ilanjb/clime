@@ -1,8 +1,8 @@
 import attr
 import pytest
 
-from parseonce.parseonce_field_transformer import parseonce_field_transformer
-from parseonce.onceparser import OnceParser
+from parseonce import parseonce_field_transformer
+from parseonce import OnceParser
 
 
 @attr.s(auto_attribs=True)
