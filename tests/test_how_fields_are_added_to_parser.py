@@ -4,6 +4,7 @@ import attr
 import pytest
 
 from parseonce import OnceParser
+from parseonce.parseonce_exceptions import BaseClassIsNotAttrs
 
 
 @attr.s(auto_attribs=True)
@@ -43,3 +44,14 @@ def test_docsrings_are_used_for_usage(capsys):
         SampleParserWithDocstings.getargs(["--help"])
     captured = capsys.readouterr()
     assert "usage: Hi. This is great" in captured.out
+
+
+class ForgotAttrsDecorator(OnceParser):
+    """Hi. This is great"""
+
+    name: str
+
+
+def test_good_catch_on_non_attr_class():
+    with pytest.raises(BaseClassIsNotAttrs, match="not going to work"):
+        ForgotAttrsDecorator.getargs()

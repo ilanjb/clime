@@ -5,6 +5,7 @@ import attr
 from parseonce.utilities import field_type_is_enum
 from parseonce.parseonce_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
+    BaseClassIsNotAttrs,
 )
 
 
@@ -70,6 +71,9 @@ class OnceParser:
         :param namespace:
         :return:
         """
+        if not hasattr(cls, "__attrs_attrs__"):
+            msg = f"{cls.__name__} does not look like it has and attrs decorator. This is not going to work :-("
+            raise BaseClassIsNotAttrs(msg)
         parser = cls._build_argument_parser()
         args = parser.parse_args(args=args, namespace=namespace)
         return cls(**args.__dict__)

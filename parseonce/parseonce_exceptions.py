@@ -2,6 +2,10 @@ class ParseonceExceptions(Exception):
     pass
 
 
+class BaseClassIsNotAttrs(ParseonceExceptions):
+    pass
+
+
 class CannotConvertAttrsAttributeToArgparseArgument(ParseonceExceptions):
     pass
 
