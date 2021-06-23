@@ -6,7 +6,7 @@ from typing import Any, Iterable, Type
 
 import attr
 
-from attrsargparser.attrsarparser_exceptions import (
+from parseonce.parseonce_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
     CouldNotAssumeConverter,
 )
@@ -61,10 +61,10 @@ KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL = {
 }
 
 
-def attrs_argparser_field_transformers(cls, fields: Iterable[attr.Attribute]):
+def parseonce_field_transformer(cls, fields: Iterable[attr.Attribute]):
     """
     adapted from https://www.attrs.org/en/stable/extending.html#automatic-field-transformation-and-modification
-    sets default convererters
+    sets default converters
 
     :param cls:
     :param fields:
@@ -101,7 +101,7 @@ def attrs_argparser_field_transformers(cls, fields: Iterable[attr.Attribute]):
     return results
 
 
-class AttrsArgparser:
+class OnceParser:
     @staticmethod
     def _add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> None:
         """

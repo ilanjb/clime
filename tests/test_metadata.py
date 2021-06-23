@@ -1,11 +1,11 @@
 import attr
 import pytest
 
-from attrsargparser.attrsargparser import AttrsArgparser
+from parseonce.parseonce import OnceParser
 
 
 @attr.s(auto_attribs=True)
-class SampleParserWithHelp(AttrsArgparser):
+class SampleParserWithHelp(OnceParser):
     name: str = attr.ib(metadata={"help": "help me!"})
 
 

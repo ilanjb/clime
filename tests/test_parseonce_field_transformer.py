@@ -2,9 +2,9 @@ from enum import Enum, auto
 
 import attr
 
-from attrsargparser.attrsargparser import (
-    attrs_argparser_field_transformers,
-    AttrsArgparser,
+from parseonce.parseonce import (
+    parseonce_field_transformer,
+    OnceParser,
 )
 
 
@@ -13,8 +13,8 @@ class Colors(Enum):
     green = auto()
 
 
-@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserWithEnum(AttrsArgparser):
+@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+class SampleParserWithEnum(OnceParser):
     color: Colors = attr.ib()
 
 

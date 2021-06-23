@@ -1,13 +1,13 @@
 import attr
 
-from attrsargparser.attrsargparser import (
-    AttrsArgparser,
-    attrs_argparser_field_transformers,
+from parseonce.parseonce import (
+    OnceParser,
+    parseonce_field_transformer,
 )
 
 
 @attr.s(auto_attribs=True)
-class SampleParserIntAttWithoutDefaultValue(AttrsArgparser):
+class SampleParserIntAttWithoutDefaultValue(OnceParser):
     age: int = attr.ib(converter=int)
 
 
@@ -18,8 +18,8 @@ def test_with_int_inputtet_as_str():
     assert args.age == 7
 
 
-@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserIntAttWithoutDefaultValueWithFieldTransformer(AttrsArgparser):
+@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+class SampleParserIntAttWithoutDefaultValueWithFieldTransformer(OnceParser):
     age: int
 
 

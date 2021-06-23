@@ -3,11 +3,11 @@ from random import random
 import attr
 import pytest
 
-from attrsargparser.attrsargparser import AttrsArgparser
+from parseonce.parseonce import OnceParser
 
 
 @attr.s(auto_attribs=True)
-class SampleParserStrAttNoDefaultValue(AttrsArgparser):
+class SampleParserStrAttNoDefaultValue(OnceParser):
     name: str
 
 
@@ -19,7 +19,7 @@ def test_default_means_positional_argument_bad(capsys):
 
 
 @attr.s(auto_attribs=True)
-class SampleParserWithNonInitField(AttrsArgparser):
+class SampleParserWithNonInitField(OnceParser):
     name: str
     secret: int = attr.ib(init=False, factory=random)
 
@@ -32,7 +32,7 @@ def test_non_init_fields_not_in_parser(capsys):
 
 
 @attr.s(auto_attribs=True)
-class SampleParserWithDocstings(AttrsArgparser):
+class SampleParserWithDocstings(OnceParser):
     """Hi. This is great"""
 
     name: str

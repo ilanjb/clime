@@ -2,9 +2,9 @@ from enum import Enum, auto
 
 import attr
 
-from attrsargparser.attrsargparser import (
-    AttrsArgparser,
-    attrs_argparser_field_transformers,
+from parseonce.parseonce import (
+    OnceParser,
+    parseonce_field_transformer,
 )
 
 
@@ -14,7 +14,7 @@ class Colors(Enum):
 
 
 @attr.s(auto_attribs=True)
-class SampleParserWithEnum(AttrsArgparser):
+class SampleParserWithEnum(OnceParser):
     color: Colors = attr.ib(converter=Colors.__getattr__)
 
 
@@ -23,8 +23,8 @@ def test_enums_good_choice_explicit_converter():
     assert args.color == Colors.green
 
 
-@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserWithEnumWithFieldTransformer(AttrsArgparser):
+@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+class SampleParserWithEnumWithFieldTransformer(OnceParser):
     color: Colors
 
 

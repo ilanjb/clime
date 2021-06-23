@@ -1,17 +1,17 @@
 import attr
 import pytest
 
-from attrsargparser.attrsargparser import (
-    AttrsArgparser,
-    attrs_argparser_field_transformers,
+from parseonce.parseonce import (
+    OnceParser,
+    parseonce_field_transformer,
 )
-from attrsargparser.attrsarparser_exceptions import (
+from parseonce.parseonce_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
 )
 
 
 @attr.s(auto_attribs=True)
-class SampleParserBoolAttWithDefaultValue(AttrsArgparser):
+class SampleParserBoolAttWithDefaultValue(OnceParser):
     is_cool: bool = False
 
 
@@ -30,7 +30,7 @@ def test_bool_implict_false():
 
 
 @attr.s(auto_attribs=True)
-class SampleParserBoolAttWithoutDefaultValue(AttrsArgparser):
+class SampleParserBoolAttWithoutDefaultValue(OnceParser):
     is_cool: bool
 
 
@@ -39,8 +39,8 @@ def test_bool_must_have_default():
         SampleParserBoolAttWithoutDefaultValue.getargs()
 
 
-@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserBoolAttWithFieldTransformer(AttrsArgparser):
+@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+class SampleParserBoolAttWithFieldTransformer(OnceParser):
     is_cool: bool = False
 
 

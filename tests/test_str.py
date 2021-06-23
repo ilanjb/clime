@@ -1,14 +1,14 @@
 import attr
 import pytest
 
-from attrsargparser.attrsargparser import (
-    AttrsArgparser,
-    attrs_argparser_field_transformers,
+from parseonce.parseonce import (
+    OnceParser,
+    parseonce_field_transformer,
 )
 
 
 @attr.s(auto_attribs=True)
-class SampleParserStrAttNoDefaultValue(AttrsArgparser):
+class SampleParserStrAttNoDefaultValue(OnceParser):
     name: str
 
 
@@ -24,7 +24,7 @@ def test_first_sample_no_default_means_positional_argument_bad():
 
 
 @attr.s(auto_attribs=True)
-class SampleParserStrAttWithDefaultValue(AttrsArgparser):
+class SampleParserStrAttWithDefaultValue(OnceParser):
     name: str = None
 
 
@@ -38,8 +38,8 @@ def test_with_default_means_kw_argument_no_arg_given():
     assert args.name is None
 
 
-@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserStrAttNoDefaultValueWithFieldTransformer(AttrsArgparser):
+@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+class SampleParserStrAttNoDefaultValueWithFieldTransformer(OnceParser):
     name: str  # strint will be get converter string. Which is fine...
 
 

@@ -1,14 +1,14 @@
 import attr
 import pytest
 
-from attrsargparser.attrsargparser import (
-    AttrsArgparser,
-    attrs_argparser_field_transformers,
+from parseonce.parseonce import (
+    OnceParser,
+    parseonce_field_transformer,
 )
 
 
 @attr.s(auto_attribs=True)
-class SampleParserIntAttWithoutDefaultValue(AttrsArgparser):
+class SampleParserIntAttWithoutDefaultValue(OnceParser):
     age: float = attr.ib(converter=float)
 
 
@@ -27,8 +27,8 @@ def test_catch_not_a_float():
         SampleParserIntAttWithoutDefaultValue.getargs(["seven"])
 
 
-@attr.frozen(auto_attribs=True, field_transformer=attrs_argparser_field_transformers)
-class SampleParserIntAtteWithFieldTransformer(AttrsArgparser):
+@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+class SampleParserIntAtteWithFieldTransformer(OnceParser):
     age: float
 
 
