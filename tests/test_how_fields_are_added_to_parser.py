@@ -3,37 +3,37 @@ from random import random
 import attr
 import pytest
 
-from parseonce import OnceParser
+from parseonce import parse_once
 from parseonce.parseonce_exceptions import BaseClassIsNotAttrs
 
 
 @attr.s(auto_attribs=True)
-class SampleParserStrAttNoDefaultValue(OnceParser):
+class SampleParserStrAttNoDefaultValue:
     name: str
 
 
 def test_default_means_positional_argument_bad(capsys):
     with pytest.raises(SystemExit):
-        SampleParserStrAttNoDefaultValue.getargs(["--name", "joe"])
+        parse_once(SampleParserStrAttNoDefaultValue, ["--name", "joe"])
     captured = capsys.readouterr()
     assert "unrecognized arguments: --name" in captured.err
 
 
 @attr.s(auto_attribs=True)
-class SampleParserWithNonInitField(OnceParser):
+class SampleParserWithNonInitField:
     name: str
     secret: int = attr.ib(init=False, factory=random)
 
 
 def test_non_init_fields_not_in_parser(capsys):
     with pytest.raises(SystemExit):
-        SampleParserStrAttNoDefaultValue.getargs(["joe", "123"])
+        parse_once(SampleParserStrAttNoDefaultValue, ["joe", "123"])
     captured = capsys.readouterr()
     assert "unrecognized arguments: 123" in captured.err
 
 
 @attr.s(auto_attribs=True)
-class SampleParserWithDocstings(OnceParser):
+class SampleParserWithDocstings:
     """Hi. This is great"""
 
     name: str
@@ -41,12 +41,12 @@ class SampleParserWithDocstings(OnceParser):
 
 def test_docsrings_are_used_for_usage(capsys):
     with pytest.raises(SystemExit):
-        SampleParserWithDocstings.getargs(["--help"])
+        parse_once(SampleParserWithDocstings, ["--help"])
     captured = capsys.readouterr()
     assert "usage: Hi. This is great" in captured.out
 
 
-class ForgotAttrsDecorator(OnceParser):
+class ForgotAttrsDecorator:
     """Hi. This is great"""
 
     name: str
@@ -54,4 +54,4 @@ class ForgotAttrsDecorator(OnceParser):
 
 def test_good_catch_on_non_attr_class():
     with pytest.raises(BaseClassIsNotAttrs, match="not going to work"):
-        ForgotAttrsDecorator.getargs()
+        parse_once(ForgotAttrsDecorator)

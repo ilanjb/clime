@@ -3,7 +3,6 @@ from enum import Enum, auto
 import attr
 
 from parseonce import parseonce_field_transformer
-from parseonce import OnceParser
 
 
 class Colors(Enum):
@@ -12,7 +11,7 @@ class Colors(Enum):
 
 
 @attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
-class SampleParserWithEnum(OnceParser):
+class SampleParserWithEnum:
     color: Colors = attr.ib()
 
 
