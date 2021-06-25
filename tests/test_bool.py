@@ -1,9 +1,9 @@
 import attr
 import pytest
 
-from parseonce import parseonce_field_transformer
-from parseonce import parse_once
-from parseonce.parseonce_exceptions import (
+from clime import clime_field_transformer
+from clime import clime
+from clime.clime_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
 )
 
@@ -14,7 +14,7 @@ class SampleParserBoolAttWithDefaultValue:
 
 
 def test_bool_explict_true():
-    args = parse_once(
+    args = clime(
         SampleParserBoolAttWithDefaultValue,
         args=[
             "--is-cool",
@@ -23,8 +23,8 @@ def test_bool_explict_true():
     assert args.is_cool is True
 
 
-def test_bool_implict_false():
-    args = parse_once(SampleParserBoolAttWithDefaultValue, args=[])
+def test_bool_implicit_false():
+    args = clime(SampleParserBoolAttWithDefaultValue, args=[])
     assert args.is_cool is False
 
 
@@ -35,14 +35,14 @@ class SampleParserBoolAttWithoutDefaultValue:
 
 def test_bool_must_have_default():
     with pytest.raises(BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults):
-        parse_once(SampleParserBoolAttWithoutDefaultValue)
+        clime(SampleParserBoolAttWithoutDefaultValue)
 
 
-@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+@attr.frozen(auto_attribs=True, field_transformer=clime_field_transformer)
 class SampleParserBoolAttWithFieldTransformer:
     is_cool: bool = False
 
 
 def test_bool_gets_bool_converter():
-    args = parse_once(SampleParserBoolAttWithFieldTransformer, args=["--is-cool"])
+    args = clime(SampleParserBoolAttWithFieldTransformer, args=["--is-cool"])
     assert args.is_cool is True

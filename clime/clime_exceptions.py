@@ -1,12 +1,12 @@
-class ParseonceExceptions(Exception):
+class CliMeExceptions(Exception):
     pass
 
 
-class BaseClassIsNotAttrs(ParseonceExceptions):
+class BaseClassIsNotAttrs(CliMeExceptions):
     pass
 
 
-class CannotConvertAttrsAttributeToArgparseArgument(ParseonceExceptions):
+class CannotConvertAttrsAttributeToArgparseArgument(CliMeExceptions):
     pass
 
 
@@ -16,7 +16,7 @@ class BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(
     pass
 
 
-class FieldTransformerExceptions(ParseonceExceptions):
+class FieldTransformerExceptions(CliMeExceptions):
     pass
 
 

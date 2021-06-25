@@ -3,15 +3,15 @@ import logging
 
 import attr
 
-from parseonce.configs import KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL
-from parseonce.utilities import field_type_is_enum, field_type_is_class
-from parseonce.parseonce_exceptions import CouldNotAssumeConverter
+from clime.configs import KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL
+from clime.utilities import field_type_is_enum, field_type_is_class
+from clime.clime_exceptions import CouldNotAssumeConverter
 
 
 LOGGER = logging.Logger(__name__)
 
 
-def parseonce_field_transformer(cls, fields: Iterable[attr.Attribute]):
+def clime_field_transformer(cls, fields: Iterable[attr.Attribute]):
     """
     adapted from https://www.attrs.org/en/stable/extending.html#automatic-field-transformation-and-modification
     sets default converters

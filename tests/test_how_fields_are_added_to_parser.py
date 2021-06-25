@@ -3,8 +3,8 @@ from random import random
 import attr
 import pytest
 
-from parseonce import parse_once
-from parseonce.parseonce_exceptions import BaseClassIsNotAttrs
+from clime import clime
+from clime.clime_exceptions import BaseClassIsNotAttrs
 
 
 @attr.s(auto_attribs=True)
@@ -14,7 +14,7 @@ class SampleParserStrAttNoDefaultValue:
 
 def test_default_means_positional_argument_bad(capsys):
     with pytest.raises(SystemExit):
-        parse_once(SampleParserStrAttNoDefaultValue, ["--name", "joe"])
+        clime(SampleParserStrAttNoDefaultValue, ["--name", "joe"])
     captured = capsys.readouterr()
     assert "unrecognized arguments: --name" in captured.err
 
@@ -27,7 +27,7 @@ class SampleParserWithNonInitField:
 
 def test_non_init_fields_not_in_parser(capsys):
     with pytest.raises(SystemExit):
-        parse_once(SampleParserStrAttNoDefaultValue, ["joe", "123"])
+        clime(SampleParserStrAttNoDefaultValue, ["joe", "123"])
     captured = capsys.readouterr()
     assert "unrecognized arguments: 123" in captured.err
 
@@ -41,7 +41,7 @@ class SampleParserWithDocstings:
 
 def test_docsrings_are_used_for_usage(capsys):
     with pytest.raises(SystemExit):
-        parse_once(SampleParserWithDocstings, ["--help"])
+        clime(SampleParserWithDocstings, ["--help"])
     captured = capsys.readouterr()
     assert "usage: Hi. This is great" in captured.out
 
@@ -54,4 +54,4 @@ class ForgotAttrsDecorator:
 
 def test_good_catch_on_non_attr_class():
     with pytest.raises(BaseClassIsNotAttrs, match="not going to work"):
-        parse_once(ForgotAttrsDecorator)
+        clime(ForgotAttrsDecorator)

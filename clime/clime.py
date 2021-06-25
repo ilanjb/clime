@@ -2,8 +2,8 @@ from argparse import ArgumentParser
 
 import attr
 
-from parseonce.utilities import field_type_is_enum
-from parseonce.parseonce_exceptions import (
+from clime.utilities import field_type_is_enum
+from clime.clime_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
     BaseClassIsNotAttrs,
 )
@@ -62,7 +62,7 @@ def build_argument_parser(attrs_decorated_class) -> ArgumentParser:
     return parser
 
 
-def parse_once(attrs_decorated_class, args=None, namespace=None):
+def clime(attrs_decorated_class, args=None, namespace=None):
     """
     Main api. Turns the class into and parser and returns the and instance of the class.
     :param args:

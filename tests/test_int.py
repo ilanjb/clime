@@ -1,7 +1,7 @@
 import attr
 
-from parseonce import parseonce_field_transformer
-from parseonce import parse_once
+from clime import clime_field_transformer
+from clime import clime
 
 
 @attr.s(auto_attribs=True)
@@ -10,17 +10,17 @@ class SampleParserIntAttWithoutDefaultValue:
 
 
 def test_with_int_inputtet_as_str():
-    args = parse_once(
+    args = clime(
         SampleParserIntAttWithoutDefaultValue, ["7"]
     )  # input from command line take as str
     assert args.age == 7
 
 
-@attr.frozen(auto_attribs=True, field_transformer=parseonce_field_transformer)
+@attr.frozen(auto_attribs=True, field_transformer=clime_field_transformer)
 class SampleParserIntAttWithoutDefaultValueWithFieldTransformer:
     age: int
 
 
 def test_int_type_gets_int_converter():
-    args = parse_once(SampleParserIntAttWithoutDefaultValueWithFieldTransformer, ["7"])
+    args = clime(SampleParserIntAttWithoutDefaultValueWithFieldTransformer, ["7"])
     assert args.age == 7

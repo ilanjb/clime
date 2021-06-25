@@ -1,7 +1,7 @@
 import attr
 import pytest
 
-from parseonce import parse_once
+from clime import clime
 
 
 @attr.s(auto_attribs=True)
@@ -11,6 +11,6 @@ class SampleParserWithHelp:
 
 def test_help_works(capsys):
     with pytest.raises(SystemExit):
-        parse_once(SampleParserWithHelp, ["--help"])
+        clime(SampleParserWithHelp, ["--help"])
     captured = capsys.readouterr()
     assert "help me!" in captured.out
