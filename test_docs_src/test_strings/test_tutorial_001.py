@@ -2,7 +2,8 @@ import sys
 
 import pytest
 
-from docs_src.strings.tutorial_001 import main
+from clime import clime
+from docs_src.strings.tutorial_001 import main, Dude
 
 
 def test_help(set_cli_sys_argv, capsys):
@@ -47,3 +48,9 @@ def test_args_inputted_properly(set_cli_sys_argv, capsys):
     main()
     captured = capsys.readouterr()
     assert captured.out == "hi! my name is joe\n"
+
+
+def test_cli_input_equals_pure_input():
+    from_cli = clime(Dude, args=["joe"])
+    from_python = Dude(name="joe")
+    assert from_cli == from_python
