@@ -13,4 +13,3 @@ site
 htmlcov
 .pytest_cache
 coverage.xml
-docs
