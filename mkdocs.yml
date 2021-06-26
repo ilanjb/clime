@@ -1,0 +1,8 @@
+site_name: CliMe
+site_url: https://example.com/
+nav:
+    - CliMe: 'index.md'
+    - About: 'about.md'
+    - Tutorials:
+        - strings: 'tutorials/string_tutorial.md'
+theme: readthedocs
