@@ -4,5 +4,25 @@ nav:
     - CliMe: 'index.md'
     - About: 'about.md'
     - Tutorials:
-        - strings: 'tutorials/string_tutorial.md'
+        - Strings:
+          - Intro: 'tutorials/strings/index.md'
+          - Positional: 'tutorials/strings/positional.md'
+
+markdown_extensions:
+    - toc:
+        permalink: true
+    - markdown.extensions.codehilite:
+        guess_lang: false
+    - markdown_include.include:
+        base_path: docs
+    - admonition
+    - codehilite
+    - extra
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_div_format
+    - pymdownx.tabbed
+
 theme: readthedocs

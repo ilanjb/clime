@@ -11,9 +11,5 @@ class Dude:
         print(f"hi! my name is {self.name}")
 
 
-def main():
-    clime(Dude).introduce()
-
-
 if __name__ == "__main__":
-    main()
+    clime(Dude).introduce()
