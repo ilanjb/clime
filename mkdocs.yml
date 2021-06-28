@@ -7,6 +7,7 @@ nav:
         - Strings:
           - Intro: 'tutorials/strings/index.md'
           - Positional: 'tutorials/strings/positional.md'
+          - Using Attrib: 'tutorials/strings/using_attrib.md'
 
 markdown_extensions:
     - toc:
