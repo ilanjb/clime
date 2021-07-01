@@ -8,6 +8,7 @@ nav:
           - Intro: 'tutorials/strings/index.md'
           - Positional: 'tutorials/strings/positional.md'
           - Default Values: 'tutorials/strings/defaults.md'
+          - Optional Default Values: 'tutorials/strings/optional_defaults.md'
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'

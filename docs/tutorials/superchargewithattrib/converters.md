@@ -1,4 +1,3 @@
-Using the power of attr.ib can supercharge your CliMe.
 Lets say you want all name to be capitalized, but you're happy to be flexible on input
 Ie Joe, joe, JOE and even jOe should all be understood as Joe
 Just use attr.ib(converter=str.capitalize) like this:

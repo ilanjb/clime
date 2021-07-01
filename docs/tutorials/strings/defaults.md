@@ -1,4 +1,4 @@
-To use defaul values, just add a default value to the attribute
+To use default values, just add a default value to the attribute
 
 ```Python 
 {!../docs_src/strings/tutorial_002.py!}
@@ -7,7 +7,7 @@ Check it:
 <div class="termy">
 
 ```console
-$ python tutorial_002.py
+$ python tutorial_002.py --help
 
 usage: tutorial_002.py [-h] [--name NAME]
 

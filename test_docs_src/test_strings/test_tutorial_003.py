@@ -3,7 +3,7 @@ import sys
 import pytest
 
 from clime import clime
-from docs_src.strings.tutorial_002 import main, Dude
+from docs_src.strings.tutorial_003 import main, Dude
 
 
 def test_help(set_cli_sys_argv, capsys):
@@ -17,28 +17,17 @@ def test_help(set_cli_sys_argv, capsys):
 
     assert "optional arguments:" in captured.out
     assert "--name NAME" in captured.out
-    assert "(default: joe)" in captured.out
+    assert "(default: None)" in captured.out
     assert "positional arguments" not in captured.out
     """
     should like like this... 
-    
+
     usage: _jb_pytest_runner.py [-h] [--name NAME]
 
     optional arguments:
     -h, --help   show this help message and exit
-    --name NAME  (default: joe)
+    --name NAME  (default: None)
     """
-
-
-def test_flags_mandatory_for_positional_args(set_cli_sys_argv, capsys):
-    """
-    no args with when one ar is mandatory will fail on argparser
-    """
-    sys.argv.append("joe")
-    with pytest.raises(SystemExit):
-        main()
-    captured = capsys.readouterr()
-    assert "error: unrecognized arguments: joe" in captured.err
 
 
 def test_good_with_default(set_cli_sys_argv, capsys):
@@ -47,7 +36,7 @@ def test_good_with_default(set_cli_sys_argv, capsys):
     """
     main()
     captured = capsys.readouterr()
-    assert "hi! my name is joe" in captured.out
+    assert "hi! my name is a secret" in captured.out
 
 
 def test_good_with_argument(set_cli_sys_argv, capsys):
