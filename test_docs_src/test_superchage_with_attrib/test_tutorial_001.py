@@ -1,6 +1,7 @@
 import sys
 
-from docs_src.strings.tutorial_002 import main
+from docs_src.supercharge_with_attrib.tutorial_001 import main
+
 
 def test_args_inputted_properly(set_cli_sys_argv, capsys):
     """

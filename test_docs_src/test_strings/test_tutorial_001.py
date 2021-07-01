@@ -14,7 +14,7 @@ def test_help(set_cli_sys_argv, capsys):
     with pytest.raises(SystemExit):
         main()
     captured = capsys.readouterr()
-    assert 'positional arguments:\n  name' in captured.out
+    assert "positional arguments:\n  name" in captured.out
     """
     should look like this:
     usage: tutorial_001.py [-h] name
@@ -25,6 +25,7 @@ def test_help(set_cli_sys_argv, capsys):
     optional arguments:
       -h, --help  show this help message and exit
     """
+
 
 def test_no_args(set_cli_sys_argv, capsys):
     """
