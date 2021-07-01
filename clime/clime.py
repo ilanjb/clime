@@ -15,7 +15,7 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
     All types will be handled as strings except for booleans!
     conversions should be done via attrs.ib(converter=)
     """
-    arg_name = field.name.replace("_", "-")  # this is not working well
+    arg_name = field.name.replace("_", "-")
     arg_type = field.type
     default = field.default
     help_str = field.metadata.get(

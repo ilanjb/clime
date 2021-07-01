@@ -9,6 +9,9 @@ nav:
           - Positional: 'tutorials/strings/positional.md'
           - Default Values: 'tutorials/strings/defaults.md'
           - Optional Default Values: 'tutorials/strings/optional_defaults.md'
+        - Booleans:
+            - Intro: 'tutorials/booleans/index.md'
+            - Default False: 'tutorials/booleans/default_false.md'
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'
