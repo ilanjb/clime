@@ -1,4 +1,4 @@
-from argparse import ArgumentParser
+from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 import attr
 
@@ -18,7 +18,7 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
     arg_name = field.name.replace("_", "-")  # this is not working well
     arg_type = field.type
     default = field.default
-    help_str = field.metadata.get("help", "")
+    help_str = field.metadata.get("help", " ")  # default to something so the ArgumentDefaultsHelpFormatter will work.
 
     kwargs = {
         "help": help_str,
@@ -56,7 +56,7 @@ def build_argument_parser(attrs_decorated_class) -> ArgumentParser:
     Creates the parser. then adds the arguments.
     :return:
     """
-    parser = ArgumentParser(usage=attrs_decorated_class.__doc__)
+    parser = ArgumentParser(usage=attrs_decorated_class.__doc__, formatter_class=ArgumentDefaultsHelpFormatter)
     for field in attrs_decorated_class.__attrs_attrs__:
         add_argument_to_parser(parser, field)
     return parser

@@ -4,9 +4,8 @@ Ie Joe, joe, JOE and even jOe should all be understood as Joe
 Just use attr.ib(converter=str.capitalize) like this:
 
 ```Python
-{!../docs_src/strings/tutorial_002.py!}
+{!../docs_src/supercharge_with_attrib/tutorial_001.py!}
 ```
-
 Try it!
 
 ```console
