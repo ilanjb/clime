@@ -7,7 +7,8 @@ nav:
         - Strings:
           - Intro: 'tutorials/strings/index.md'
           - Positional: 'tutorials/strings/positional.md'
-          - Using Attrib: 'tutorials/strings/using_attrib.md'
+          - Default Values: 'tutorials/strings/defaults.md'
+        - Using Attrib: 'tutorials/strings/using_attrib.md'
 
 markdown_extensions:
     - toc:

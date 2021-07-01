@@ -50,6 +50,6 @@ Note that this is an unfortunate difference between argument parser and the unde
 The class can take kwargs as positional. Argument parser cannot. 
 
 Anyways... that's it.
-All you need to take positional strings is an attrs decorated class with a 'str' annotated class variabl.
+All you need to take positional strings is an attrs decorated class with a 'str' annotated class variable.
 
 
