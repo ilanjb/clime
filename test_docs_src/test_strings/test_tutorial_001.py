@@ -14,11 +14,17 @@ def test_help(set_cli_sys_argv, capsys):
     with pytest.raises(SystemExit):
         main()
     captured = capsys.readouterr()
-    assert (
-        captured.out
-        == "usage: _jb_pytest_runner.py [-h] name\n\npositional arguments:\n  name\n\noptional arguments:\n  -h, --help  show this help message and exit\n"
-    )
+    assert 'positional arguments:\n  name' in captured.out
+    """
+    should look like this:
+    usage: tutorial_001.py [-h] name
 
+    positional arguments:
+      name
+    
+    optional arguments:
+      -h, --help  show this help message and exit
+    """
 
 def test_no_args(set_cli_sys_argv, capsys):
     """
@@ -34,10 +40,11 @@ def test_no_flags_do_not_work_for_positional_args(set_cli_sys_argv, capsys):
     """
     no args with when one ar is mandatory will fail on argparser
     """
+    sys.argv.extend(["--name", "joe"])
     with pytest.raises(SystemExit):
         main()
     captured = capsys.readouterr()
-    assert "error: the following arguments are required: name" in captured.err
+    assert "error: unrecognized arguments: --name" in captured.err
 
 
 def test_args_inputted_properly(set_cli_sys_argv, capsys):
