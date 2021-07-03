@@ -8,7 +8,7 @@ class Dude:
     likes_ice_cream: bool = False
 
     def ice_cream_status(self):
-        negate = ' do not' if not self.likes_ice_cream else ''
+        negate = " do not" if not self.likes_ice_cream else ""
         print(f"hi! i{negate} like ice cream")
 
 

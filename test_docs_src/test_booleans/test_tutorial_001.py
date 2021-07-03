@@ -24,6 +24,7 @@ def test_help(set_cli_sys_argv, capsys):
 
     """
 
+
 def test_defaults_to_false(set_cli_sys_argv, capsys):
     main()
     captured = capsys.readouterr()
@@ -31,20 +32,19 @@ def test_defaults_to_false(set_cli_sys_argv, capsys):
 
 
 def test_flag_sets_true(set_cli_sys_argv, capsys):
-    sys.argv.append('--likes-ice-cream')
+    sys.argv.append("--likes-ice-cream")
     main()
     captured = capsys.readouterr()
     assert "hi! i like ice cream" in captured.out
+
 
 def test_cli_input_equals_pure_input_no_args():
     from_cli = clime(Dude, args=[])
     from_python = Dude()
     assert from_cli == from_python
 
+
 def test_cli_input_equals_pure_input_no_args():
-    from_cli = clime(Dude, args=['--likes-ice-cream'])
+    from_cli = clime(Dude, args=["--likes-ice-cream"])
     from_python = Dude(likes_ice_cream=True)
     assert from_cli == from_python
-
-
-

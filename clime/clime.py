@@ -2,6 +2,7 @@ from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 import attr
 
+from clime.configs import CLASSES_HANDLED_DIRECTLY_BY_ARGPASER
 from clime.utilities import field_type_is_enum
 from clime.clime_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
@@ -15,19 +16,29 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
     All types will be handled as strings except for booleans!
     conversions should be done via attrs.ib(converter=)
     """
-    arg_name = field.name.replace("_", "-")
+
     arg_type = field.type
     default = field.default
-    help_str = field.metadata.get(
-        "help", " "
-    )  # default to something so the ArgumentDefaultsHelpFormatter will work.
+
+    custom_help = field.metadata.get("help", "")
+
+    type_help = f"type: <{arg_type.__name__}>"
+
+    help_str = f"{custom_help} {type_help}"
 
     kwargs = {
         "help": help_str,
     }
 
     if default != attr.NOTHING:  # handle as optional / non-positional
+        arg_name = field.name.replace("_", "-")  # will be changed back
         arg_name = f"--{arg_name}"
+
+    else:
+        arg_name = field.name
+        default = None  # safe to pass to add_argument()
+        if custom_help:
+            kwargs["help"] = custom_help  # dont force help.
 
     treat_as_enum = field_type_is_enum(arg_type)
 
@@ -48,6 +59,9 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
         kwargs["action"] = action
 
     else:
+        if arg_type in CLASSES_HANDLED_DIRECTLY_BY_ARGPASER:
+            kwargs["type"] = arg_type
+
         kwargs["default"] = default
 
     parser.add_argument(arg_name, **kwargs)

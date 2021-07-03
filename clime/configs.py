@@ -1,11 +1,22 @@
 from pathlib import Path
 
-KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL = {
-    # adapted from https://docs.python.org/3/library/argparse.html#type
+CLASSES_WITH_SPECLIAL_CLIME_HANDLING_DIRECTLY_BY_ARGPASER = {
     str,
+    bool,
+}
+
+CLASSES_HANDLED_DIRECTLY_BY_ARGPASER = {
     int,
     float,
-    bool,
-    Path,
     ord,
+    str,
 }
+
+OTHER_CLASSES_THAT_WILL_WORK_WELL = {
+    Path,
+}
+KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL = (
+    CLASSES_WITH_SPECLIAL_CLIME_HANDLING_DIRECTLY_BY_ARGPASER.intersection(
+        CLASSES_HANDLED_DIRECTLY_BY_ARGPASER
+    ).intersection(OTHER_CLASSES_THAT_WILL_WORK_WELL)
+)
