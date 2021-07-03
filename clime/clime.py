@@ -3,7 +3,7 @@ from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 import attr
 
 from clime.configs import CLASSES_HANDLED_DIRECTLY_BY_ARGPASER
-from clime.utilities import field_type_is_enum
+from clime.utilities import field_type_is_enum, get_arg_type_for_argparser
 from clime.clime_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
     BaseClassIsNotAttrs,
@@ -17,7 +17,8 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
     conversions should be done via attrs.ib(converter=)
     """
 
-    arg_type = field.type
+    arg_type = get_arg_type_for_argparser(field)
+
     default = field.default
 
     custom_help = field.metadata.get("help", "")
