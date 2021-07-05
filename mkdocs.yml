@@ -15,6 +15,7 @@ nav:
         - Integers, Floats, and other simple classes:
             - Intro: 'tutorials/integers_floats_and_other_simple_classes/index.md'
             - Integers: 'tutorials/integers_floats_and_other_simple_classes/integers.md'
+            - Optional Integers: 'tutorials/integers_floats_and_other_simple_classes/optional_integers.md'
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'

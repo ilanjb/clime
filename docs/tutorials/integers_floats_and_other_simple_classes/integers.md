@@ -1,14 +1,14 @@
 Attributes annotated with `int` are converted to type: int in argparser
 
 ```Python 
-{!../docs_src/intergers/tutorial_001.py!}
+{!../docs_src/integers_floats_and_other_simple_classes/tutorial_001.py!}
 ```
 Check it:
 
 <div class="termy">
 
 ```console
-$ python docs_src/intergers/tutorial_001.py
+$ python docs_src/integers_floats_and_other_simple_classes/tutorial_001.py
 
 usage: tutorial_001.py [-h] age_in_years
 
@@ -29,7 +29,7 @@ Try it!
 <div class="termy">
 
 ```console
-$ python docs_src/intergers/tutorial_001.py 12
+$ python docs_src/integers_floats_and_other_simple_classes/tutorial_001.py 12
 I am 12 years old.
 
 ```
@@ -39,7 +39,7 @@ Non-integers will be caught by ArgumentParser
 <div class="termy">
 
 ```console
-$ python docs_src/intergers/tutorial_001.py hi
+$ python docs_src/integers_floats_and_other_simple_classes/tutorial_001.py hi
 usage: tutorial_001.py [-h] age_in_years
 tutorial_001.py: error: argument age_in_years: invalid int value: 'hi'
 ```
@@ -48,11 +48,11 @@ tutorial_001.py: error: argument age_in_years: invalid int value: 'hi'
 <div class="termy">
 
 ```console
-$ python docs_src/intergers/tutorial_001.py 12.1
+$ python docs_src/integers_floats_and_other_simple_classes/tutorial_001.py 12.1
 usage: tutorial_001.py [-h] age_in_years
 tutorial_001.py: error: argument age_in_years: invalid int value: '12.1'
 
 ```
 </div>
 
-That's its.
+That's it\.

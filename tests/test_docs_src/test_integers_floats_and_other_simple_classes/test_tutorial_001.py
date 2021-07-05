@@ -3,7 +3,7 @@ import sys
 import pytest
 
 from clime import clime
-from docs_src.intergers.tutorial_001 import main, Dude
+from docs_src.integers_floats_and_other_simple_classes.tutorial_001 import main, Dude
 
 
 def test_help(set_cli_sys_argv, capsys):
