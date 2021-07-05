@@ -12,6 +12,9 @@ nav:
         - Booleans:
             - Intro: 'tutorials/booleans/index.md'
             - Default False: 'tutorials/booleans/default_false.md'
+        - Integers, Floats, and other simple classes:
+            - Intro: 'tutorials/integers_floats_and_other_simple_classes/index.md'
+            - Integers: 'tutorials/integers_floats_and_other_simple_classes/integers.md'
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'
