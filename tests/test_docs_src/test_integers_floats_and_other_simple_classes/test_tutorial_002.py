@@ -45,6 +45,6 @@ def test_correct_input(set_cli_sys_argv, capsys):
 
 
 def test_cli_input_equals_pure_input():
-    from_cli = clime(Dude, args=["1"])
+    from_cli = clime(Dude, args=["--age-in-years", "1"])
     from_python = Dude(1)
     assert from_cli == from_python

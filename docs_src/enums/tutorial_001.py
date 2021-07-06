@@ -6,7 +6,7 @@ from clime import clime
 
 
 class Colors(Enum):
-    red = "red"
+    red = "red"  # or 1 or auto()...
     blue = "blue"
 
 
@@ -15,7 +15,9 @@ class Dude:
     favorite_color: Colors
 
     def print_favorite_color(self):
-        print(f"my favorite color is {self.favorite_color.value}")
+        print(
+            f"my favorite color is {self.favorite_color.name}"
+        )  # we're dealing with Enums here!
 
 
 def main():
