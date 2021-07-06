@@ -44,10 +44,13 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
     treat_as_enum = field_type_is_enum(arg_type)
 
     if treat_as_enum:
-        choices = arg_type._member_names_
+        # as suggested by rhettinger https://bugs.python.org/issue25061#msg350853
+        # note that the choices are presented as {ClassName.name,} which is unfortunale
+        choices = arg_type
         kwargs["choices"] = choices
         if default:
-            kwargs["default"] = default.name
+            kwargs["default"] = default.name  # will be converted back
+        kwargs["type"] = arg_type
 
     elif arg_type == bool:
         if default is False:

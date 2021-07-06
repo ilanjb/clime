@@ -12,9 +12,7 @@ def test_help(set_cli_sys_argv, capsys):
     with pytest.raises(SystemExit):
         main()
     captured = capsys.readouterr()
-    assert (
-        "positional arguments" not in captured.out
-    )
+    assert "positional arguments" not in captured.out
     assert "--age-in-years" in captured.out
     # should look like this
     """
@@ -35,14 +33,16 @@ def test_nothing_inputed(set_cli_sys_argv, capsys):
     captured = capsys.readouterr()
     assert captured.out == "A script never reveals its age\n"
 
+
 def test_correct_input(set_cli_sys_argv, capsys):
     """
     no args with when one ar is mandatory will fail on argparser
     """
-    sys.argv.extend(['--age-in-years', '12'])
+    sys.argv.extend(["--age-in-years", "12"])
     main()
     captured = capsys.readouterr()
     assert captured.out == "I am 12 years old.\n"
+
 
 def test_cli_input_equals_pure_input():
     from_cli = clime(Dude, args=["1"])
