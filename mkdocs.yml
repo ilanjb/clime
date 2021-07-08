@@ -18,6 +18,9 @@ nav:
         - Choices with Enums:
             - Intro: 'tutorials/enums/index.md'
             - Enums: 'tutorials/enums/enums.md'
+        - Help:
+            - Intro: 'tutorials/help/index.md'
+            - Usage: 'tutorials/help/usage.md'
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'
