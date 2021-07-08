@@ -21,6 +21,7 @@ nav:
         - Help:
             - Intro: 'tutorials/help/index.md'
             - Usage: 'tutorials/help/usage.md'
+            - Help: 'tutorials/help/help.md'
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'
