@@ -25,6 +25,7 @@ nav:
         - Using Attrib:
           - Intro: 'tutorials/superchargewithattrib/index.md'
           - Converters: 'tutorials/superchargewithattrib/converters.md'
+          - Validators: 'tutorials/superchargewithattrib/validators.md'
 
 markdown_extensions:
     - toc:
