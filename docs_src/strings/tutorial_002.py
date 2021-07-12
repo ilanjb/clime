@@ -7,12 +7,12 @@ from clime import clime
 class Dude:
     name: str = "joe"  # attributes with default values in the class will be set as optional arguments in the cli
 
-    def introduce(self):
+    def say_name(self):
         print(f"hi! my name is {self.name}")
 
 
 def main():
-    clime(Dude).introduce()
+    clime(Dude).say_name()
 
 
 if __name__ == "__main__":

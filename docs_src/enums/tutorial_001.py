@@ -14,14 +14,14 @@ class Colors(Enum):
 class Dude:
     favorite_color: Colors
 
-    def print_favorite_color(self):
+    def say_favorite_color(self):
         print(
             f"my favorite color is {self.favorite_color.name}"
         )  # we're dealing with Enums here!
 
 
 def main():
-    clime(Dude).print_favorite_color()
+    clime(Dude).say_favorite_color()
 
 
 if __name__ == "__main__":

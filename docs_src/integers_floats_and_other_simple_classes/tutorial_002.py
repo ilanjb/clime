@@ -9,7 +9,7 @@ from clime import clime
 class Dude:
     age_in_years: Optional[int] = None
 
-    def print_age(self):
+    def say_age(self):
         if self.age_in_years is not None:  # 0 counts!
             print(f"I am {self.age_in_years} years old.")
         else:
@@ -17,7 +17,7 @@ class Dude:
 
 
 def main():
-    clime(Dude).print_age()
+    clime(Dude).say_age()
 
 
 if __name__ == "__main__":
