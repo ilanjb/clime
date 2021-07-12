@@ -1,8 +1,9 @@
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
+from inspect import signature
 
 import attr
 
-from clime.configs import CLASSES_HANDLED_DIRECTLY_BY_ARGPASER
+from clime.configs import KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL
 from clime.utilities import field_type_is_enum, get_arg_type_for_argparser
 from clime.clime_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
@@ -31,6 +32,7 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
         "help": help_str,
     }
 
+    # positonal / optional handling
     if default != attr.NOTHING:  # handle as optional / non-positional
         arg_name = field.name.replace("_", "-")  # will be changed back
         arg_name = f"--{arg_name}"
@@ -41,9 +43,13 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
         if custom_help:
             kwargs["help"] = custom_help  # dont force help.
 
-    treat_as_enum = field_type_is_enum(arg_type)
+    # type handling
 
-    if treat_as_enum:
+    treat_as_enum = field_type_is_enum(arg_type)
+    if field.converter:  # user can convert howerver they want. Keep type out of it.
+        pass
+
+    elif treat_as_enum:
         # as suggested by rhettinger https://bugs.python.org/issue25061#msg350853
         # note that the choices are presented as {ClassName.name,} which is unfortunale
         choices = arg_type
@@ -63,9 +69,10 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
         kwargs["action"] = action
 
     else:
-        if arg_type in CLASSES_HANDLED_DIRECTLY_BY_ARGPASER:
-            kwargs["type"] = arg_type
-
+        if arg_type not in KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL:
+            init_signature = signature(arg_type.__init__, follow_wrapped=True)
+            # check
+        kwargs["type"] = arg_type
         kwargs["default"] = default
 
     parser.add_argument(arg_name, **kwargs)
