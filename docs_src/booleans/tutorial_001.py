@@ -7,13 +7,13 @@ from clime import clime
 class Dude:
     likes_ice_cream: bool = False
 
-    def ice_cream_status(self):
+    def declare_ice_cream_status(self):
         negate = " do not" if not self.likes_ice_cream else ""
         print(f"hi! i{negate} like ice cream")
 
 
 def main():
-    clime(Dude).ice_cream_status()
+    clime(Dude).declare_ice_cream_status()
 
 
 if __name__ == "__main__":

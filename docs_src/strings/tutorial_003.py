@@ -11,7 +11,7 @@ class Dude:
         str
     ] = None  # defaults can be set to None. Make sure to annotate as Optional
 
-    def say_name(self):
+    def state_name(self):
         if self.name:
             print(f"hi! my name is {self.name}")
         else:
@@ -19,7 +19,7 @@ class Dude:
 
 
 def main():
-    clime(Dude).say_name()
+    clime(Dude).state_name()
 
 
 if __name__ == "__main__":

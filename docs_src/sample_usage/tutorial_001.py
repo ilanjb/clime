@@ -19,21 +19,21 @@ class Dude:
     favorite_color: Colors
     age_in_years: Optional[int] = None
 
-    def say_name(self):
+    def state_name(self):
         print(f"hi! my name is {self.name}")
 
-    def say_favorite_color(self):
+    def profess_favorite_color(self):
         print(
             f"my favorite color is {self.favorite_color.name}"
         )  # we're dealing with Enums here!
 
-    def say_age(self):
+    def volunteer_age(self):
         if self.age_in_years is not None:  # 0 counts!
             print(f"I am {self.age_in_years} years old.")
         else:
             print("A script never reveals its age")
 
     def introduce(self):
-        self.say_name()
-        self.say_favorite_color()
-        self.say_age()
+        self.state_name()
+        self.profess_favorite_color()
+        self.volunteer_age()

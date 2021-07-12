@@ -7,12 +7,12 @@ from clime import clime
 class Dude:
     age_in_years: int
 
-    def say_age(self):
+    def confess_age(self):
         print(f"I am {self.age_in_years} years old.")
 
 
 def main():
-    clime(Dude).say_age()
+    clime(Dude).confess_age()
 
 
 if __name__ == "__main__":
