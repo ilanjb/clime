@@ -8,6 +8,7 @@ from clime.utilities import field_type_is_enum, get_arg_type_for_argparser
 from clime.clime_exceptions import (
     BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults,
     BaseClassIsNotAttrs,
+    ClassesCanOnlyHaveOneInitArgumentBesidesSelfToBeConverted,
 )
 
 
@@ -70,8 +71,12 @@ def add_argument_to_parser(parser: ArgumentParser, field: attr.Attribute) -> Non
 
     else:
         if arg_type not in KNOWN_CLASS_TYPES_THAT_WILL_WORK_WELL:
+            # we can try to init any class with an init of 2 (self, something_else)
             init_signature = signature(arg_type.__init__, follow_wrapped=True)
-            # check
+            if len(init_signature.parameters) != 2:
+                msg = f"{arg_type}'s init: {init_signature} "
+                raise ClassesCanOnlyHaveOneInitArgumentBesidesSelfToBeConverted(msg)
+
         kwargs["type"] = arg_type
         kwargs["default"] = default
 

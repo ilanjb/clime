@@ -16,9 +16,7 @@ class BooleanArgumentsCannotBePositionalSoTheyMustHaveDefaults(
     pass
 
 
-class FieldTransformerExceptions(CliMeExceptions):
-    pass
-
-
-class CouldNotAssumeConverter(FieldTransformerExceptions):
+class ClassesCanOnlyHaveOneInitArgumentBesidesSelfToBeConverted(
+    CannotConvertAttrsAttributeToArgparseArgument
+):
     pass
