@@ -1,11 +1,8 @@
 site_name: CliMe
 site_url: https://example.com/
 nav:
-    - CliMe:
-        - About Clime:
-          - Sample Usage:
-              - Intro: 'tutorials/about/index.md'
-              - Sample 1: 'tutorials/about/sample_usage1.md'
+    - CliMe: 'index.md'
+    - Features:  'tutorials/about/features.md'
     - Tutorials:
         - Strings:
           - Intro: 'tutorials/strings/index.md'

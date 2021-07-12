@@ -1,14 +1,13 @@
-# What does CliMe do?
+# Features
 
 Say you wrote an amazing class like this:
 ```Python 
 {!../docs_src/sample_usage/tutorial_001.py!}
 ```
-Your proud of your great work and you want to show it off to your friends.
+Now you want to show it off to your friends. 
+Which meand you are probably going to have make a CLI...
 
-Which mean you are probably going to have make a CLI...
-
-## An ArgumentParser based CLI in one function
+## Auto-generated, [Argparse](https://docs.python.org/3/library/argparse.html) based, CLIs from [attrs](https://www.attrs.org/en/stable/) classes in one function..
 With CliMe, all you have to do is this:
 
 ```Python 
