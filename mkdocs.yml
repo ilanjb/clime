@@ -12,7 +12,7 @@ nav:
         - Booleans:
             - Intro: 'tutorials/booleans/index.md'
             - Default False: 'tutorials/booleans/default_false.md'
-        - Integers, Floats, and other simple classes:
+        - Integers, Floats, and Other Single String Instantiable Classes:
             - Intro: 'tutorials/integers_floats_and_other_simple_classes/index.md'
             - Integers: 'tutorials/integers_floats_and_other_simple_classes/integers.md'
             - Optional Integers: 'tutorials/integers_floats_and_other_simple_classes/optional_integers.md'
