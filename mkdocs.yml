@@ -1,5 +1,7 @@
 site_name: CliMe
 site_url: https://example.com/
+repo_url: https://github.com/ilanjb/clime/
+edit_uri: 'edit/main/docs/'
 nav:
     - CliMe: 'index.md'
     - Features:  'tutorials/about/features.md'
