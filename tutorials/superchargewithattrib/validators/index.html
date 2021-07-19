@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://example.com/tutorials/superchargewithattrib/validators/">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Validators - CliMe</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Validators";
+    var mkdocs_page_input_path = "tutorials\\superchargewithattrib\\validators.md";
+    var mkdocs_page_url = "/tutorials/superchargewithattrib/validators/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CliMe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">CliMe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/features/">Features</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Strings</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/positional/">Positional</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/defaults/">Default Values</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/optional_defaults/">Optional Default Values</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Booleans</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../booleans/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../booleans/default_false/">Default False</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Integers, Floats, and Other Single String Instantiable Classes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/integers/">Integers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/optional_integers/">Optional Integers</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Choices with Enums</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../enums/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../enums/enums/">Enums</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Help</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/help/">Help</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Using Attrib</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../converters/">Converters</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Validators</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CliMe</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Using Attrib &raquo;</li>
+        
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+    
+    <li>Validators</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p>Lets say you want all want to validate your input.
+Just use <a href="https://www.attrs.org/en/stable/examples.html#validators">attrs validators</a>... </p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">attr</span>
+
+<span class="kn">from</span> <span class="nn">clime</span> <span class="kn">import</span> <span class="n">clime</span>
+
+
+<span class="k">def</span> <span class="nf">x_smaller_than_100</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">attribute</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has to be smaller than 100!&quot;</span><span class="p">)</span>
+
+
+<span class="nd">@attr</span><span class="o">.</span><span class="n">s</span>
+<span class="k">class</span> <span class="nc">Dude</span><span class="p">:</span>
+    <span class="n">favorite_number_less_than_100</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">ib</span><span class="p">(</span>
+        <span class="n">validator</span><span class="o">=</span><span class="p">[</span><span class="n">attr</span><span class="o">.</span><span class="n">validators</span><span class="o">.</span><span class="n">instance_of</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">x_smaller_than_100</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">print_favorite_number_less_than_100</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;My favorite number less than 100 is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">favorite_number_less_than_100</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">clime</span><span class="p">(</span><span class="n">Dude</span><span class="p">)</span><span class="o">.</span><span class="n">print_favorite_number_less_than_100</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+Try it!</p>
+<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>python docs_src<span class="se">\s</span>upercharge_with_attrib<span class="se">\t</span>utorial_002.py  <span class="m">10</span>
+<span class="go">My favorite number less than 100 is 10</span>
+</code></pre></div>
+What if you enter and invalid input?</p>
+<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>python docs_src<span class="se">\s</span>upercharge_with_attrib<span class="se">\t</span>utorial_002.py  <span class="m">101</span>
+<span class="go">Traceback (most recent call last):</span>
+<span class="go">  File &quot;C:\Users\ilanb\PycharmProjects\attrsargparser\docs_src\supercharge_with_attrib\tutorial_002.py&quot;, line 24, in &lt;module&gt;</span>
+<span class="go">    main()</span>
+<span class="go">  File &quot;C:\Users\ilanb\PycharmProjects\attrsargparser\docs_src\supercharge_with_attrib\tutorial_002.py&quot;, line 20, in main</span>
+<span class="go">    clime(Dude).print_favorite_number_less_than_100()</span>
+<span class="go">  File &quot;C:\Users\ilanb\PycharmProjects\attrsargparser\clime\clime.py&quot;, line 100, in clime</span>
+<span class="go">    return attrs_decorated_class(**args.__dict__)</span>
+<span class="go">  File &quot;&lt;attrs generated init __main__.Dude&gt;&quot;, line 4, in __init__</span>
+<span class="go">  File &quot;C:\Users\ilanb\PycharmProjects\attrsargparser\venv\lib\site-packages\attr\_make.py&quot;, line 2975, in __call__</span>
+<span class="go">    v(inst, attr, value)</span>
+<span class="go">  File &quot;C:\Users\ilanb\PycharmProjects\attrsargparser\docs_src\supercharge_with_attrib\tutorial_002.py&quot;, line 9, in x_smaller_than_100</span>
+<span class="go">    raise ValueError(f&quot;{attribute.name} has to be smaller than 100!&quot;)</span>
+<span class="go">ValueError: favorite_number_less_than_100 has to be smaller than 100!</span>
+</code></pre></div>
+You won't do that again!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../converters/" class="btn btn-neutral" title="Converters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../converters/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

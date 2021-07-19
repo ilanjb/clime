@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://example.com/tutorials/about/features/">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Features - CliMe</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Features";
+    var mkdocs_page_input_path = "tutorials\\about\\features.md";
+    var mkdocs_page_url = "/tutorials/about/features/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CliMe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">CliMe</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Features</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#auto-generated-argparse-based-clis-from-attrs-classes-in-one-function">Auto-generated, Argparse based, CLIs from attrs classes in one function..</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#no-duplicate-code">No Duplicate code!</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#code-completion">Code Completion!</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Strings</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/positional/">Positional</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/defaults/">Default Values</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/optional_defaults/">Optional Default Values</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Booleans</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../booleans/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../booleans/default_false/">Default False</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Integers, Floats, and Other Single String Instantiable Classes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/integers/">Integers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/optional_integers/">Optional Integers</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Choices with Enums</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../enums/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../enums/enums/">Enums</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Help</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/help/">Help</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Using Attrib</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../superchargewithattrib/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../superchargewithattrib/converters/">Converters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../superchargewithattrib/validators/">Validators</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CliMe</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Features</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h1>
+<p>Say you wrote an amazing class like this:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">attr</span>
+
+
+<span class="k">class</span> <span class="nc">Colors</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">red</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>  <span class="c1"># or 1 or auto()...</span>
+    <span class="n">blue</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+
+
+<span class="nd">@attr</span><span class="o">.</span><span class="n">s</span><span class="p">(</span><span class="n">auto_attribs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Dude</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Everything about the Dude!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">favorite_color</span><span class="p">:</span> <span class="n">Colors</span>
+    <span class="n">age_in_years</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">state_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hi! my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">profess_favorite_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;my favorite color is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">favorite_color</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>  <span class="c1"># we&#39;re dealing with Enums here!</span>
+
+    <span class="k">def</span> <span class="nf">volunteer_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">age_in_years</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># 0 counts!</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I am </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age_in_years</span><span class="si">}</span><span class="s2"> years old.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A script never reveals its age&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state_name</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profess_favorite_color</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volunteer_age</span><span class="p">()</span>
+</code></pre></div>
+Now you want to show it off to your friends. </p>
+<p>Which means you are probably going to have make a CLI...</p>
+<h2 id="auto-generated-argparse-based-clis-from-attrs-classes-in-one-function">Auto-generated, <a href="https://docs.python.org/3/library/argparse.html">Argparse</a> based, CLIs from <a href="https://www.attrs.org/en/stable/">attrs</a> classes in one function..<a class="headerlink" href="#auto-generated-argparse-based-clis-from-attrs-classes-in-one-function" title="Permanent link">&para;</a></h2>
+<p>With CliMe, all you have to do is this:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">clime</span> <span class="kn">import</span> <span class="n">clime</span>
+<span class="kn">from</span> <span class="nn">docs_src.sample_usage.tutorial_001</span> <span class="kn">import</span> <span class="n">Dude</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    CliMe it!</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dude</span><span class="p">:</span> <span class="n">Dude</span> <span class="o">=</span> <span class="n">clime</span><span class="p">(</span><span class="n">Dude</span><span class="p">)</span>
+    <span class="n">dude</span><span class="o">.</span><span class="n">introduce</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Check it:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python <span class="se">\d</span>ocs_src<span class="se">\s</span>ample_usage<span class="se">\t</span>utorial_002.py --help
+<span class="go">usage:</span>
+<span class="go">    Everything about the Dude!</span>
+
+
+<span class="go">positional arguments:</span>
+<span class="go">  name                  type: &lt;str&gt;</span>
+<span class="go">  {Colors.red,Colors.blue}</span>
+<span class="go">                        type: &lt;Colors&gt;</span>
+
+<span class="go">optional arguments:</span>
+<span class="go">  -h, --help            show this help message and exit</span>
+<span class="go">  --age-in-years AGE_IN_YEARS</span>
+<span class="go">                        type: &lt;int&gt; (default: None)</span>
+</code></pre></div>
+</div>
+
+<p>did you see that?</p>
+<ul>
+<li>Argument names are taken from that attributes</li>
+<li>Argument types are taken from that type annotations, and converted for you!</li>
+<li>Help is taken from the docstrings. </li>
+<li><em>All you did was CliMe it!</em></li>
+</ul>
+<h2 id="no-duplicate-code">No Duplicate code!<a class="headerlink" href="#no-duplicate-code" title="Permanent link">&para;</a></h2>
+<p>Making a custom ArgumentParser for Dude would look like this 
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+
+<span class="kn">from</span> <span class="nn">docs_src.sample_usage.tutorial_001</span> <span class="kn">import</span> <span class="n">Dude</span><span class="p">,</span> <span class="n">Colors</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    make a parser.</span>
+<span class="sd">    parser the args.</span>
+<span class="sd">    convert the args</span>
+<span class="sd">    pass to Dude.</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># make the parser</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="c1"># add the arguments. These must match the arguments from the class</span>
+    <span class="c1"># If Dude&#39;s signature changes, dont forget to update here!!!</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;favorite_color&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">Colors</span><span class="o">.</span><span class="n">__members__</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--age-in-years&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="c1"># parse</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c1"># convert args not handled by ArgumentParser</span>
+    <span class="n">favorite_color</span> <span class="o">=</span> <span class="n">Colors</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">favorite_color</span><span class="p">]</span>  <span class="c1"># I hope I spelled that right!</span>
+
+    <span class="c1"># instantiate and go</span>
+    <span class="n">dude</span><span class="p">:</span> <span class="n">Dude</span> <span class="o">=</span> <span class="n">Dude</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">favorite_color</span><span class="p">,</span> <span class="n">age_in_years</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">age_in_years</span><span class="p">)</span>
+    <span class="n">dude</span><span class="o">.</span><span class="n">introduce</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+Note how much duplicate code CliMe saves you.
+With CliMe, any changes to Dude's signature are automatically updated in the CLI!</p>
+<h2 id="code-completion">Code Completion!<a class="headerlink" href="#code-completion" title="Permanent link">&para;</a></h2>
+<p>Since CliMe returns an instance of your class, you IDE will be eager to help
+<img alt="Code Completion" src="../img/codecompletion.png" /></p>
+<p>Compare that to the Namespace returned by ArgumentParser.parser_args():
+<img alt="No Code Completion" src="../img/nocodecompletion.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../strings/" class="btn btn-neutral float-right" title="Intro">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../.." class="btn btn-neutral" title="CliMe"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../strings/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

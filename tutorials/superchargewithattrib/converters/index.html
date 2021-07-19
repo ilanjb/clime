@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://example.com/tutorials/superchargewithattrib/converters/">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Converters - CliMe</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Converters";
+    var mkdocs_page_input_path = "tutorials\\superchargewithattrib\\converters.md";
+    var mkdocs_page_url = "/tutorials/superchargewithattrib/converters/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CliMe</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">CliMe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/features/">Features</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Strings</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/positional/">Positional</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/defaults/">Default Values</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../strings/optional_defaults/">Optional Default Values</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Booleans</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../booleans/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../booleans/default_false/">Default False</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Integers, Floats, and Other Single String Instantiable Classes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/integers/">Integers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../integers_floats_and_other_simple_classes/optional_integers/">Optional Integers</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Choices with Enums</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../enums/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../enums/enums/">Enums</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Help</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../help/help/">Help</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Using Attrib</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Intro</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Converters</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../validators/">Validators</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CliMe</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Using Attrib &raquo;</li>
+        
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+    
+    <li>Converters</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p>Lets say you want all names to be capitalized, but you're happy to be flexible on input.
+Ie Joe, joe, JOE and even jOe should all be understood as Joe
+Just use <a href="https://www.attrs.org/en/stable/examples.html#conversion">attrs converters</a>... </p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">attr</span>
+
+<span class="kn">from</span> <span class="nn">clime</span> <span class="kn">import</span> <span class="n">clime</span>
+
+
+<span class="nd">@attr</span><span class="o">.</span><span class="n">s</span><span class="p">(</span><span class="n">auto_attribs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Dude</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">ib</span><span class="p">(</span><span class="n">converter</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hi! my name is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">clime</span><span class="p">(</span><span class="n">Dude</span><span class="p">)</span><span class="o">.</span><span class="n">introduce</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+Try it!</p>
+<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>python main.py joe
+<span class="go">hi! my name is Joe</span>
+</code></pre></div>
+It works!</p>
+<p>When using an explicit converter, Clime will not try to convert the input into the annotated type.
+That means you can do whatever you want with as long as it starts with a string.
+Here, we input a date:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">attr</span>
+
+<span class="kn">from</span> <span class="nn">clime</span> <span class="kn">import</span> <span class="n">clime</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="k">def</span> <span class="nf">year_month_day_to_date</span><span class="p">(</span><span class="n">year_month_day</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &#39;2000-11-22&#39; -&gt;</span>
+<span class="sd">    :param year_month_day:</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">year_month_day</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+
+
+<span class="nd">@attr</span><span class="o">.</span><span class="n">s</span>
+<span class="k">class</span> <span class="nc">Dude</span><span class="p">:</span>
+    <span class="n">birthday</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">ib</span><span class="p">(</span><span class="n">converter</span><span class="o">=</span><span class="n">year_month_day_to_date</span><span class="p">)</span>
+    <span class="c1"># attributes with explicity converters will be taken with argument parser as strings</span>
+    <span class="c1"># you can do whatver you want with them!</span>
+
+    <span class="k">def</span> <span class="nf">print_my_birthday</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My birthday is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">birthday</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">clime</span><span class="p">(</span><span class="n">Dude</span><span class="p">)</span><span class="o">.</span><span class="n">print_my_birthday</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Try it!</p>
+<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>python <span class="se">\d</span>ocs_src<span class="se">\s</span>upercharge_with_attrib<span class="se">\t</span>utorial_003.py <span class="m">2000</span>-11-22
+<span class="go">My birthday is 2000-11-22</span>
+</code></pre></div>
+It works!</p>
+<p>But what if the date is invalid?</p>
+<p>Lets check...
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python <span class="se">\d</span>ocs_src<span class="se">\s</span>upercharge_with_attrib<span class="se">\t</span>utorial_003.py <span class="m">2000</span>-13-22
+<span class="go">Traceback (most recent call last):</span>
+<span class="go">  File &quot;\docs_src\supercharge_with_attrib\tutorial_003.py&quot;, line 29, in &lt;module&gt;</span>
+<span class="go">    main()</span>
+<span class="go">  File &quot;\docs_src\supercharge_with_attrib\tutorial_003.py&quot;, line 25, in main</span>
+<span class="go">    clime(Dude).print_my_birthday()</span>
+<span class="go">  File &quot;\clime\clime.py&quot;, line 100, in clime</span>
+<span class="go">    return attrs_decorated_class(**args.__dict__)</span>
+<span class="go">  File &quot;&lt;attrs generated init __main__.Dude&gt;&quot;, line 2, in __init__</span>
+<span class="go">  File &quot;\docs_src\supercharge_with_attrib\tutorial_003.py&quot;, line 14, in year_month_day_to_date</span>
+<span class="go">    return datetime.datetime.strptime(year_month_day, &#39;%Y-%m-%d&#39;).date()</span>
+<span class="go">  File &quot;C:\Program Files\Python38\lib\_strptime.py&quot;, line 568, in _strptime_datetime</span>
+<span class="go">    tt, fraction, gmtoff_fraction = _strptime(data_string, format)</span>
+<span class="go">  File &quot;C:\Program Files\Python38\lib\_strptime.py&quot;, line 349, in _strptime</span>
+<span class="go">    raise ValueError(&quot;time data %r does not match format %r&quot; %</span>
+<span class="go">ValueError: time data &#39;2000-13-22&#39; does not match format &#39;%Y-%m-%d&#39;</span>
+</code></pre></div>
+2000-13-22 is not a valid date so the conversion fails.</p>
+<p>In other words, the conversion acts as an implicit <a href="../validators/">validator</a>.<br />
+Amazing!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../validators/" class="btn btn-neutral float-right" title="Validators">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Intro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../validators/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
