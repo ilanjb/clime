@@ -28,7 +28,7 @@ Run it
 <div class="termy">
 
 ```console 
-$ python tutorial_000.py --help
+$ python tutorial_000.py joe
 Dude(name='joe')
 ```
 </div>

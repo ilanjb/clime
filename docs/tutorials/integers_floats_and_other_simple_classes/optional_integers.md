@@ -26,6 +26,7 @@ Cool!
 
 - age_in_years is annotated with `Optional[int]`
 - CliMe takes converts it an optional argument
+
 Try it!
 
 No arguments:

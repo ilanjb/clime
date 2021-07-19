@@ -5,7 +5,8 @@ Say you wrote an amazing class like this:
 {!../docs_src/sample_usage/tutorial_001.py!}
 ```
 Now you want to show it off to your friends. 
-Which meand you are probably going to have make a CLI...
+
+Which means you are probably going to have make a CLI...
 
 ## Auto-generated, [Argparse](https://docs.python.org/3/library/argparse.html) based, CLIs from [attrs](https://www.attrs.org/en/stable/) classes in one function..
 With CliMe, all you have to do is this:
@@ -36,6 +37,14 @@ optional arguments:
 ```
 </div>
 
+did you see that?
+
+* Argument names are taken from that attributes
+* Argument types are taken from that type annotations, and converted for you!
+* Help is taken from the docstrings. 
+* *All you did was CliMe it!*
+
+
 ##  No Duplicate code!
 Making a custom ArgumentParser for Dude would look like this 
 ```Python 
@@ -48,6 +57,7 @@ With CliMe, any changes to Dude's signature are automatically updated in the CLI
 ## Code Completion!
 Since CliMe returns an instance of your class, you IDE will be eager to help
 ![Code Completion](img/codecompletion.png)
+
 Compare that to the Namespace returned by ArgumentParser.parser_args():
 ![No Code Completion](img/nocodecompletion.png)
 

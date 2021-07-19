@@ -22,6 +22,7 @@ optional arguments:
 </div>
 
 Cool!
+
 - Dude is a normal attrs decorated class.
 - Name is a an argument type annotated with `str`.
 - CliMe takes the class and turns it into a CLI with the builtin ArgumentParser.
@@ -50,6 +51,6 @@ Note that this is an unfortunate difference between argument parser and the unde
 The class can take kwargs as positional. Argument parser cannot. 
 
 Anyways... that's it.
-All you need to take positional strings is an attrs decorated class with a 'str' annotated class variable.
+All you need to take positional strings is an attrs decorated class with a `str` annotated class variable.
 
 

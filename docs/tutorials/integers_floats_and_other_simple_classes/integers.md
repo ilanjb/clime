@@ -1,4 +1,4 @@
-Attributes annotated with `int` are converted to type: int in argparser
+Attributes annotated with `int` are converted to `type=int` in ArgumentParser
 
 ```Python 
 {!../docs_src/integers_floats_and_other_simple_classes/tutorial_001.py!}

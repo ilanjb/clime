@@ -9,7 +9,7 @@ Check it:
 <div class="termy">
 
 ```console
-python \docs_src\usage\tutorial_001.py --help
+python tutorial_001.py --help
 usage:
     Amaze your friends by printing you name to the console
 

@@ -8,7 +8,7 @@ Check it:
 <div class="termy">
 
 ```console
-python \docs_src\help\tutorial_001.py --help
+python tutorial_001.py --help
 usage: tutorial_001.py [-h] name
 
 positional arguments:
@@ -22,4 +22,4 @@ optional arguments:
 
 Cool!
 
-Actually, of all of the features of Clime, this one seems the most clunky. Better ideas? 
+Actually, of all of the features of CliMe, this one seems the most clunky. Better ideas? 

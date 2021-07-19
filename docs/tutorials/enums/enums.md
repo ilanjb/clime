@@ -1,4 +1,4 @@
-Any custom enum class can be used to annotate an attibute and converted into an argument.
+Any custom `Enum` class can be used to annotate an attribute and converted into an argument.
 
 ```Python 
 {!../docs_src/enums/tutorial_001.py!}

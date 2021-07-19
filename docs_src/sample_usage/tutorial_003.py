@@ -23,7 +23,7 @@ def main():
     args = parser.parse_args()
 
     # convert args not handled by ArgumentParser
-    favorite_color = Colors[args.favorite_color]  # i hope a spelled that right!
+    favorite_color = Colors[args.favorite_color]  # I hope I spelled that right!
 
     # instantiate and go
     dude: Dude = Dude(args.name, favorite_color, age_in_years=args.age_in_years)

@@ -1,4 +1,4 @@
-Lets say you want all name to be capitalized, but you're happy to be flexible on input
+Lets say you want all names to be capitalized, but you're happy to be flexible on input.
 Ie Joe, joe, JOE and even jOe should all be understood as Joe
 Just use [attrs converters](https://www.attrs.org/en/stable/examples.html#conversion)... 
 
@@ -14,7 +14,7 @@ hi! my name is Joe
 It works!
 
 When using an explicit converter, Clime will not try to convert the input into the annotated type.
-That means you can do whatver you want with as long as it starts with a sting.
+That means you can do whatever you want with as long as it starts with a string.
 Here, we input a date:
 
 
@@ -54,7 +54,7 @@ ValueError: time data '2000-13-22' does not match format '%Y-%m-%d'
 ```
 2000-13-22 is not a valid date so the conversion fails.
 
-In other words, the conversion acts as an implicit [validator](../validators/)   
+In other words, the conversion acts as an implicit [validator](../validators/).  
 Amazing!
 
 

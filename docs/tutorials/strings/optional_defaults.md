@@ -37,5 +37,4 @@ hi! my name is mike
 ```
 It works with optional arguments!
 
-that's it.
-Go ahead. Default to None!
+That's it. Go ahead. Default to `None`!

@@ -5,7 +5,7 @@ from clime import clime
 
 @attr.s(auto_attribs=True)
 class Dude:
-    # docstrings will be take for the ArgumentParser "usage"
+    # docstrings will be taken for the ArgumentParser "usage"
     """
     Amaze your friends by printing you name to the console
     """
